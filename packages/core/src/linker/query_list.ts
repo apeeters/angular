@@ -45,7 +45,7 @@ function symbolIterator<T>(this: QueryList<T>): Iterator<T> {
 export class QueryList<T> implements Iterable<T> {
   public readonly dirty = true;
   private _results: Array<T> = [];
-  public readonly changes: Observable<any> = new EventEmitter();
+  public readonly changes: Observable<QueryList<T>> = new EventEmitter();
 
   readonly length: number = 0;
   // TODO(issue/24571): remove '!'.
